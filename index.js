@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.get('/',(req,res)=>{console.log('hey!', new Date()})
+app.get('/',(req,res)=>{console.log('hey!', new Date())})
 
 setInterval(async ()=>{
     const resp = await axios.get('https://alive-6bh2.onrender.com');
