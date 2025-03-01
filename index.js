@@ -4,10 +4,10 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.get('/',(req,res)=>{console.log('hey!', new Date())})
+app.get('/health',(req,res)=>{console.log('hey!', new Date())})
 
 setInterval(async ()=>{
-    const resp = await axios.get('https://alive-6bh2.onrender.com');
+    const resp = await axios.get('https://alive-6bh2.onrender.com/health');
     console.log(`Got keep-alive! - `,(resp.data))
     const resp2 = await axios.get('https://vanaj-backend-dev.onrender.com/');
     console.log(`Got keep-alive for vanaj! - `,(resp2.data))
